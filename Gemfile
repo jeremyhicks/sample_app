@@ -1,14 +1,21 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'pg'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-	gem 'sqlite3'
-	gem 'rspec-rails'
-	gem 'capybara'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'spork'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'rb-fsevent'
 end
 
 
@@ -25,7 +32,3 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
-group :production do
-	gem 'pg'
-end
